@@ -52,7 +52,9 @@ java -cp "target/classes;target/dependency/*" co.edu.escuelaing.arep.patrones.Pa
 ```
 
 The application in this case will run on port 8080.
-
+```bash
+http://localhost:8080
+```
 ## Project Structure
 ```Bash
 AREP-Lab5/
