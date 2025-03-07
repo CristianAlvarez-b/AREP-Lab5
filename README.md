@@ -56,6 +56,8 @@ The main components of the backend include:
 
 ### Class Diagram:
 
+![image](https://github.com/user-attachments/assets/753d21cc-b563-48b9-ab05-65902b4b9bd0)
+
 ## Deployment Instructions
 ### Deployment Mysql Database
 
