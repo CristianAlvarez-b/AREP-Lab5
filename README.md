@@ -5,8 +5,55 @@
 
 The Property Management System is a web-based application designed to facilitate the management of real estate properties. The system allows users to create, read, update, and delete (CRUD) property listings, providing an intuitive interface for property owners and buyers.
 
+## Getting Started
 
-### Project Structure
+These instructions will guide you through obtaining a copy of the project running on your local machine for development and testing purposes
+### Prerequisites
+
+To run this project, you must have Java installed on your system. Follow the steps below to install Java and Maven (which is used for managing dependencies).
+1. **Install Java:**
+
+    Download and install the Java JDK (version 11 or higher). You can follow the instructions on the [official Java website](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
+
+2. **Install Maven:**
+
+   - Maven is used to manage project dependencies. You can download and install Maven from [here](https://maven.apache.org/download.cgi).
+
+   - After installation, verify if Maven is correctly installed by running: mvn -v. This should show the installed Maven version.
+3. **Install Docker**  
+### Installing
+> [!NOTE]
+> You should perform the following steps from a Bash terminal or PowerShell on Windows. 
+
+> [!IMPORTANT]
+> Previously start DockerDesktop
+
+To set up your development environment:
+1. **Clone the repository:**
+```bash
+git clone https://github.com/CristianAlvarez-b/AREP-Lab5
+```
+2. **Navigate to the project directory:**
+```bash
+cd AREP-Lab5
+```
+3. **Create the docker instance for the database:**
+```bash
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=mydb -p 3307:3306 -d mysql:latest
+```
+4. **Build the project with Maven:**
+```bash
+mvn clean install
+```
+  This will compile the code and package it into an executable JAR file.
+5. **Run the app:**
+```bash
+java -cp "target/classes;target/dependency/*" co.edu.escuelaing.arep.patrones.PatronesApplication
+```
+
+The application in this case will run on port 8080.
+
+## Project Structure
 ```Bash
 AREP-Lab5/
 │── src/
@@ -105,6 +152,12 @@ The main components of the backend include:
 ## Test
 ### Unit Test
 
+Run unit tests: To run the automated tests, use the following Maven command:
+   ```bash
+   mvn test
+   ```
+
+![image](https://github.com/user-attachments/assets/50c67dc6-e9ba-41f4-aeb5-ae7a07d7e92b)
 
 
 ### Funcional Test
