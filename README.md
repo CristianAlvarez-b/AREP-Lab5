@@ -107,6 +107,39 @@ The main components of the backend include:
 
 ![image](https://github.com/user-attachments/assets/753d21cc-b563-48b9-ab05-65902b4b9bd0)
 
+## CRUD 
+### Create
+1. Fill the form
+
+![image](https://github.com/user-attachments/assets/5b7c53e0-a909-4b21-bc36-273a01644dc0)
+
+2. Click the confirmation message
+
+![image](https://github.com/user-attachments/assets/81769c02-81b9-4e90-9bb0-e2182b2f4c1b)
+
+3. Added sucessfully
+    
+![image](https://github.com/user-attachments/assets/e8ee3d73-d9d4-4233-a0a0-a15e71078a27)
+
+## Update
+1. Click on edit button
+
+![image](https://github.com/user-attachments/assets/f2aa8669-1b08-4e35-82af-b936e61a96f3)
+
+2. Fill the fields
+3. When you enter in the final field, the property will update
+
+   ![image](https://github.com/user-attachments/assets/595d1463-6c52-4e6a-ac1c-64cb277b98af)
+ 
+## Delete
+1. Click the delete button
+
+   ![image](https://github.com/user-attachments/assets/02fb5c68-3146-45ca-aa47-aebac002188a)
+
+2. The property sucessfull deleted
+
+   ![image](https://github.com/user-attachments/assets/98fdd97c-41b1-4cb6-8f16-0576d245b418)
+
 ## Deployment Instructions
 ### Deployment Mysql Database
 
