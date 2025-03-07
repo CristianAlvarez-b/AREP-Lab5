@@ -153,7 +153,8 @@ The main components of the backend include:
    
 ## Test
 ### Unit Test
-
+> [!NOTE]
+> You should test in a diferent Bash terminal or PowerShell on Windows.
 Run unit tests: To run the automated tests, use the following Maven command:
    ```bash
    mvn test
