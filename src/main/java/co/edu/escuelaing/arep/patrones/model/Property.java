@@ -10,8 +10,8 @@ public class Property {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String address;
-    private String price;
-    private String size;
+    private Double price;
+    private Double size;
     private String description;
 
     public Long getId() {
@@ -26,19 +26,19 @@ public class Property {
         this.address = address;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public String getSize() {
+    public Double getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Double size) {
         this.size = size;
     }
 

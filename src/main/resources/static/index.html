@@ -9,6 +9,18 @@
 </head>
 <body>
 <h1>Property Management</h1>
+
+<!-- Formulario de Búsqueda -->
+<form id="search-form" onsubmit="event.preventDefault(); loadProperties();">
+    <input type="text" id="search-location" placeholder="Location">
+    <input type="number" id="min-price" placeholder="Min Price">
+    <input type="number" id="max-price" placeholder="Max Price">
+    <input type="number" id="min-size" placeholder="Min Size">
+    <input type="number" id="max-size" placeholder="Max Size">
+    <button type="submit">Search</button>
+</form>
+
+<!-- Formulario de Propiedad -->
 <form id="property-form" onsubmit="event.preventDefault(); addProperty();">
     <input type="text" id="address" placeholder="Address" required>
     <input type="number" id="price" placeholder="Price" required>
@@ -16,7 +28,13 @@
     <textarea id="description" placeholder="Description"></textarea>
     <button type="submit">Add Property</button>
 </form>
+
 <h2>Property List</h2>
 <ul id="property-list"></ul>
+
+<!-- Botones de Paginación -->
+<button onclick="prevPage()">Previous</button>
+<button onclick="nextPage()">Next</button>
+
 </body>
 </html>

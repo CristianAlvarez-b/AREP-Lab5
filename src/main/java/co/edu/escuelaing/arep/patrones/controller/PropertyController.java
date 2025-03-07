@@ -4,6 +4,7 @@ import co.edu.escuelaing.arep.patrones.model.Property;
 import co.edu.escuelaing.arep.patrones.repository.PropertyRepository;
 import co.edu.escuelaing.arep.patrones.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,33 +21,38 @@ public class PropertyController {
     }
 
     @GetMapping
-    List<Property> getAllProperties() {
-        return propertyService.getAllProperties();
+    public List<Property> getAllProperties(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "5") int size,
+            @RequestParam(required = false) String location,
+            @RequestParam(required = false) Double minPrice,
+            @RequestParam(required = false) Double maxPrice,
+            @RequestParam(required = false) Double minSize,
+            @RequestParam(required = false) Double maxSize) {
+
+        return propertyService.getPropertiesWithFilters(page, size, location, minPrice, maxPrice, minSize, maxSize);
     }
 
     @GetMapping("/{id}")
-    Property getPropertyById(@PathVariable Long id) {
+    public Property getPropertyById(@PathVariable Long id) {
         return propertyService.getPropertyById(id);
     }
 
     @PostMapping
-    Property createProperty(@RequestBody Property property) {
-        return propertyService.save(property);
+    public ResponseEntity<Property> createProperty(@RequestBody Property property) {
+        Property savedProperty = propertyService.save(property);
+        return ResponseEntity.ok(savedProperty);
     }
 
     @PutMapping("/{id}")
-    Property updateProperty(@PathVariable Long id, @RequestBody Property propertyDetails) {
-        Property property = propertyService.getPropertyById(id);
-        property.setAddress(propertyDetails.getAddress());
-        property.setPrice(propertyDetails.getPrice());
-        property.setSize(propertyDetails.getSize());
-        property.setDescription(propertyDetails.getDescription());
-        return propertyService.save(property);
+    public ResponseEntity<Property> updateProperty(@PathVariable Long id, @RequestBody Property propertyDetails) {
+        Property updatedProperty = propertyService.updateProperty(id, propertyDetails);
+        return ResponseEntity.ok(updatedProperty);
     }
 
     @DeleteMapping("/{id}")
-    void deleteProperty(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteProperty(@PathVariable Long id) {
         propertyService.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }
-
